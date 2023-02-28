@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h2>calculator</h2>
+        <div class="container">
+            <div class="calculator">
+                <input type="box" placeholder="0" id="addNumber">
+                <button onclick="clr()">cl</button>
+                <button onclick="del()">DEL</button>
+                <button onclick="dis('%')" class="calc">%</button>
+                <button onclick="dis('/')" class="calc">/</button>
+                <button onclick="dis('7')" class="calc">7</button>
+                <button onclick="dis('8')" class="calc">8</button>
+                <button onclick="dis('9')" class="calc">9</button>
+                <button onclick="dis('*')" class="calc">*</button>
+                <button onclick="dis('4')" class="calc">4</button>
+                <button onclick="dis('5')" class="calc">5</button>
+                <button onclick="dis('6')" class="calc">6</button>
+                <button onclick="dis('-')" class="calc">-</button>
+                <button onclick="dis('1')" class="calc">1</button>
+                <button onclick="dis('2')" class="calc">2</button>
+                <button onclick="dis('3')" class="calc">3</button>
+                <button onclick="dis('+')" class="calc">+</button>
+                <button onclick="dis('.')" class="calc">.</button>
+                <button onclick="dis('0')" class="calc">0</button>
+                <button onclick="calculate('=')" class="equal" id="add">=</button>
+        </div>
+    </div>
+</div>
+
+   <script>
+    let addNumber = document.getElementById("addNumber");
+    function dis(num){
+    addNumber.value +=num;
+    }
+      function calculate(){
+        try{
+            addNumber.value = eval(addNumber.value)
+        }
+        catch(err){
+            alert("Invalid")
+        }
+      }
+      function clr(){
+        addNumber.value = " ";
+      }    
+      function del(){
+        addNumber.value = addNumber.value.slice(0,-1)
+      }
+   </script>
+
+</body>
+
+</html>
